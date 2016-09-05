@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS</title>
+</head>
+<style type="text/css">
+  button.disabled {
+    background-color: red;
+  }
+
+</style>
+<body ng-app="jsbin">
+  <div ng-controller="DemoCtrl as demo">
+    <h1>Hello {{demo.name}}</h1>
+    <button promise-click="demo.test();demo.testConsole();">test</button>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</body>
+<script type="text/javascript" src="../index.js"></script>
+<script type="text/javascript">
+
+  var app = angular.module('jsbin', ['angular-promise-click']);
+    app.controller('DemoCtrl', function($q) {
+      this.name = 'World';
+      function xx() {
+        this.defered = $q.defer();
+        var self = this;
+        setTimeout(function() {
+          self.defered.resolve('tttt');
+        }, 3000);
+        return self.defered.promise;
+      }
+      this.test = function() {
+        console.log(123)
+        return xx().then(function(result) {
+          console.log('test1: ' + result);
+          return xx().then(function(r) {
+            console.log('test2:' + r);
+          })
+        });
+      }
+      this.testConsole = function() {
+        console.log('test console');
+      }
+    });
+</script>
+</html>

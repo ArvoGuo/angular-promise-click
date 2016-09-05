@@ -1,0 +1,14 @@
+{
+  "name": "angular-promise-click",
+  "version": "1.0.0",
+  "description": "promise-click ==========",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "postversion": "git push origin master --tags"
+  },
+  "author": "",
+  "license": "ISC"
+}

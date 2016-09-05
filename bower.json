@@ -1,0 +1,17 @@
+{
+  "name": "angular-promise-click",
+  "main": "index.js",
+  "authors": [
+    "Arvo <ArvoGuo@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
