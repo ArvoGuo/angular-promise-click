@@ -70,4 +70,4 @@
         }
       }
     }])
-})(window.angular)
+})(window.angular);
